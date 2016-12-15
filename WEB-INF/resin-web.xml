@@ -1,0 +1,16 @@
+
+<web-app xmlns="http://caucho.com/ns/resin"
+         xmlns:resin="urn:java:com.caucho.resin">
+
+	<!-- rewrite urls for punbb -->
+  <!-- pass through all actual files to the standard dispatch -->
+  <resin:Dispatch regexp="\.">
+    <resin:IfFileExists/>
+  </resin:Dispatch>
+  <!-- pass through all php files to the standard dispatch -->
+  <resin:Dispatch regexp="\.php"/>
+  <!-- rewrite everything else ... -->
+  <resin:Forward regexp="^/$" target="/index.php" />
+  <resin:Forward regexp="^" target="/rewrite.php"/>
+
+</web-app>
