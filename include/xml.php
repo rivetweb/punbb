@@ -25,6 +25,7 @@ function xml_to_array($raw_xml)
 	xml_parser_free($xml_parser);
 
 	$_tmp = '';
+	$multi_key = array(); // FIX
 	foreach ($vals as $xml_elem)
 	{
 		$x_tag = $xml_elem['tag'];
@@ -48,6 +49,7 @@ function xml_to_array($raw_xml)
 		}
 	}
 
+	$multi_key2 = array(); // FIX
 	foreach ($vals as $xml_elem)
 	{
 		$x_tag = $xml_elem['tag'];
