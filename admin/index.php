@@ -83,8 +83,11 @@ else if (@/**/is_readable('/proc/loadavg'))
 	$load_averages = empty($load_averages) ? array() : explode(' ', $load_averages);
 	$server_load = isset($load_averages[2]) ? forum_number_format(round($load_averages[0], 2), 2).' '.forum_number_format(round($load_averages[1], 2), 2).' '.forum_number_format(round($load_averages[2], 2), 2) : 'Not available';
 }
+// FIX remove for Windwows
+/*
 else if (!in_array(PHP_OS, array('WINNT', 'WIN32')) && preg_match('/averages?: ([0-9\.]+),[\s]+([0-9\.]+),[\s]+([0-9\.]+)/i', @exec('uptime'), $load_averages))
 	$server_load = forum_number_format(round($load_averages[1], 2), 2).' '.forum_number_format(round($load_averages[2], 2), 2).' '.forum_number_format(round($load_averages[3], 2), 2);
+*/
 else
 	$server_load = $lang_admin_index['Not available'];
 
