@@ -2,7 +2,7 @@
 <web-app xmlns="http://caucho.com/ns/resin"
          xmlns:resin="urn:java:com.caucho.resin">
 
-	<!-- rewrite urls for punbb -->
+  <!-- rewrite urls for punbb -->
   <!-- pass through all actual files to the standard dispatch -->
   <resin:Dispatch regexp="\.">
     <resin:IfFileExists/>
