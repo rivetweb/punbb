@@ -787,11 +787,10 @@ function get_saved_queries()
 function get_hook($hook_id)
 {
 	if (defined('FORUM_DEBUG')) {
-		$GLOBALS['punbb.debug']['hooks'][] = $hook_id;
+		global $forum_debug_hooks;
+		$forum_debug_hooks[] = $hook_id;
 	}
-
 	global $forum_hooks;
-
 	return !defined('FORUM_DISABLE_HOOKS') && isset($forum_hooks[$hook_id]) ? implode("\n", $forum_hooks[$hook_id]) : false;
 }
 
