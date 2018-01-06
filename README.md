@@ -10,6 +10,8 @@
 java -jar lib/resin.jar start
 ```
 
+- open url http://localhost:8080/
+
 TODO 
 
 - how to install drivers for mysql
