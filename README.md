@@ -16,7 +16,7 @@ java -jar lib/resin.jar start
 
 - open url http://localhost:8080/
 
-## Run from cli
+## Run php scripts from cli
 
 ```
 java -cp lib/resin.jar com.caucho.quercus.CliQuercus webapps/ROOT/extensions/info.php
