@@ -1,0 +1,3 @@
+<?php
+
+\DevTools\DebugInfo();

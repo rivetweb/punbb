@@ -1,0 +1,3 @@
+<?php
+
+\SiteEditor\PageRender($section);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="user" method="upgrade">
+<name>User - Punbb</name>
+<author>Rick Deckard</author>
+<creationDate>2013-05-21</creationDate>
+<copyright></copyright>
+<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+<authorEmail>admin@example.com</authorEmail>
+<authorUrl>http://localhost</authorUrl>
+<version>2.5.0</version>
+<description>User Plugin for Punbb integration</description>
+<files>
+	<filename plugin="punbb">punbb.php</filename>        
+</files>
+</extension>

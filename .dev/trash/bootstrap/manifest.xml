@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension engine="1.0">
+  <id>bootstrap</id>
+  <title>Bootstrap</title>
+  <version>1.0</version>
+  <description>
+    Bootstrap framework integration for Punbb
+  </description>
+  <author>Rick Deckard</author>
+  <minversion>1.4.4</minversion>
+  <maxtestedon>1.4.4</maxtestedon>
+
+  <minphpversion>5.5</minphpversion>
+
+  <!--
+  <note type="install">
+  </note>
+  -->
+
+  <hooks>
+			<hook id="es_essentials"><![CDATA[
+				
+
+require $ext_info["path"] . "/.init.php";
+
+			]]></hook>
+		
+
+			<hook id="ft_js_include"><![CDATA[
+				
+
+$forum_loader->add_js(\Bootstrap\URL . "/js/bootstrap.min.js", [
+	"async" => false,
+	"group" => FORUM_JS_GROUP_SYSTEM
+]);
+
+			]]></hook>
+		
+
+			<hook id="hd_head"><![CDATA[
+				
+
+$forum_loader->add_css(\Bootstrap\URL . "css/bootstrap.min.css", [
+	"type" => "url",
+	"group" => FORUM_CSS_GROUP_SYSTEM,
+	"media" => "screen"
+]);
+
+			]]></hook>
+		</hooks>
+
+</extension>

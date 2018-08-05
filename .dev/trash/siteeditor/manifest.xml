@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension engine="1.0">
+  <id>siteeditor</id>
+  <title>Site editor</title>
+  <version>1.0</version>
+  <description>
+    Extension provide simple way for editing site pages
+  </description>
+  <author>Rick Deckard</author>
+  <minversion>1.4.4</minversion>
+  <maxtestedon>1.4.4</maxtestedon>
+
+  <minphpversion>5.5</minphpversion>
+  <phpextensions>curl</phpextensions>
+
+  <!--
+  <note type="install">
+  </note>
+  -->
+
+  <hooks>
+			<hook id="es_essentials"><![CDATA[
+
+
+require $ext_info["path"] . "/.init.php";
+
+			]]></hook>
+
+
+			<hook id="ft_end"><![CDATA[
+
+
+\SiteEditor\TagsApply($tpl_main);
+
+			]]></hook>
+
+
+			<hook id="ft_js_include"><![CDATA[
+
+
+\SiteEditor\FooterInit();
+
+			]]></hook>
+
+
+			<hook id="hd_head"><![CDATA[
+
+
+\SiteEditor\HeadInit();
+
+			]]></hook>
+
+
+			<hook id="hd_pre_template_loaded"><![CDATA[
+
+
+\SiteEditor\Init($tpl_path);
+
+			]]></hook>
+
+
+			<hook id="he_main_output_start"><![CDATA[
+
+
+\SiteEditor\PageInit();
+
+			]]></hook>
+
+
+			<hook id="he_new_section"><![CDATA[
+
+
+\SiteEditor\PageRender($section);
+
+			]]></hook>
+
+
+			<hook id="mi_new_action"><![CDATA[
+
+
+\SiteEditor\Save();
+
+			]]></hook>
+
+
+			<hook id="re_rewrite_rules"><![CDATA[
+
+
+\SiteEditor\RewriteRules();
+
+			]]></hook>
+		</hooks>
+
+</extension>
